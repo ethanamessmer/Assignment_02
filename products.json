@@ -1,0 +1,55 @@
+[{
+    "id": 1,
+    "title": "Etude Student Series Violin Outfit 1/8 Size",
+    "price": 199.99,
+    "description": "Laminate spruce top with laminate maple back and sides. The neck is solid maple with an oiled finish and the fingerboard and fittings are ebonized hard wood. It features a composite tailpiece with four fine tuners, a Stradivarius-style chinrest, an aged maple bridge and a traditional red finish.",
+    "category": "Violins",
+    "image": "https://st.depositphotos.com/1000165/1340/i/450/depositphotos_13404985-stock-photo-violin.jpg",
+    "rating": { "rate": 3.9, "count": 120 }
+  },
+  {
+    "id": 2,
+    "title": "BABYCE Student golden yellow flower violin",
+    "price": 281.99,
+    "description": "The violin is a great string instrument for beginners The violin is a great stringed instrument for any student",
+    "category": "Violins",
+    "image": "https://images.freeimages.com/images/large-previews/dd9/violin-1416306.jpg?fmt=webp&w=500",
+    "rating": { "rate": 4.1, "count": 259 }
+  },
+  {
+    "id": 3,
+    "title": "Orange Violin for beginners",
+    "price": 55.99,
+    "description": "A fantastic instrument for students just getting their hands on one. The small size makes this great for younger students while still being big enough for most adults to use it.",
+    "category": "Violins",
+    "image": "https://media.istockphoto.com/id/1173960792/photo/an-isolated-vertical-image-of-violin-string-music-instrument-in-orchestra.jpg?s=612x612&w=0&k=20&c=vfPwAUFSik8Rqa_hIBYSjk3kB0k-UQJ4Na0owRSQlkM=",
+    "rating": { "rate": 4.7, "count": 500 }
+  },
+  {
+    "id": 4,
+    "title": "Mighty Grand Piano",
+    "price": 1555.99,
+    "description": "A fantastic Grand Piano fit for any player. This was made in the early 1900s and was restored to its previous glory in 2022, a great price for a great piano. ",
+    "category": "Pianos",
+    "image": "https://www.nicepng.com/png/detail/75-752709_picture-royalty-free-transparent-png-stickpng-objects-piano.png",
+    "rating": { "rate": 2.1, "count": 430 }
+  },
+  {
+    "id": 5,
+    "title": "Restored Yamaha grand piano",
+    "price": 695.99,
+    "description": "From our Legends Collection, this beauty was found in a dump and restored fully to be one of the best pianos on the market.",
+    "category": "Pianos",
+    "image": "https://media.istockphoto.com/id/480652459/photo/black-grand-piano-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=HA3-PzcFl6Yd-d1s1tVrgWT_hOz5zyjcd1OhjoVduE0=",
+    "rating": { "rate": 4.6, "count": 400 }
+  },
+  {
+    "id": 6,
+    "title": "Brand New Sterling Grand",
+    "price": 168,
+    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.Designed and sold by Hafeez Center in the United States. Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    "category": "Pianos",
+    "image": "https://media.istockphoto.com/id/477805077/photo/black-grand-piano-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=A9v5MzXA0JWlunQ9IbXOhrcobE-Fx-iMhmkvpRbNxio=",
+    "rating": { "rate": 3.9, "count": 70 }
+  }
+]
