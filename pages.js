@@ -27,11 +27,11 @@ function App() {
     setViewer(dataF.viewer = 1);
     setDataF(dataF);
   };
-  const UpdateHooks = () => {
+  const updateHooks = () => {
     setViewer(dataF.viewer = 0);
-    setDataF(useState({}));
-    setCart(useState([]))
-    setCartTotal(useState(0))
+    setDataF({});
+    setCart([]);
+    setCartTotal(0);
   };
   const addToCart = (list) => {
     setCart([...cart, list]);
@@ -113,10 +113,7 @@ function App() {
     <div>
       STORE SE/ComS319
       <div className = "searchbar">
-        <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
-focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
-dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
-dark:focus:ring-blue-500 dark:focus:border-blue-500" type="search" value={query} onChange={handleChange} />
+        <input type="search" value={query} onChange={handleChange} />
       </div>
       <div class="card">
         <div class="row">
@@ -161,9 +158,16 @@ dark:focus:ring-blue-500 dark:focus:border-blue-500" type="search" value={query}
           {list.title}  ${list.price}    X{howManyofThis(list.id)}
         </div>
       ));
+    const onSubmit = data => {
+      console.log(data); // log all data
+      console.log(data.fullName); // log only fullname
+      // update hooks
+      setDataF(data);
+      setViewer(data.viewer = 2);
+    }
     return (
       <div>
-        <form updatetotwo={handleSubmit(updatetotwo)} className="container mt-5">
+        <form onSubmit={handleSubmit(onSubmit)} className="container mt-5">
             <div>
                 
                 {cartItems}
@@ -212,9 +216,9 @@ dark:focus:ring-blue-500 dark:focus:border-blue-500" type="search" value={query}
           <input {...register("zip", { required: true })} placeholder="Zip" className="form-control" />
           {errors.zip && <p className="text-danger">Zip is required.</p>}
           </div>
-          <button onClick = {updatetotwo} type="submit" className=
+          <button type="submit" className=
 "btn btn-primary">Submit</button>
-<button onClick={UpdateHooks} className="btn btn-secondary">Return</button>
+<button onClick={updateHooks} type="button" className="btn btn-secondary">Return</button>
         </form>
       </div>
     );
@@ -248,7 +252,7 @@ dark:focus:ring-blue-500 dark:focus:border-blue-500" type="search" value={query}
           {dataF.city},{dataF.state} {dataF.zip}{" "}
         </p>
         
-        <button onClick={UpdateHooks} className=
+        <button onClick={updateHooks} className=
 "btn btn-secondary">Return to shop.</button>
       </div>
     );
