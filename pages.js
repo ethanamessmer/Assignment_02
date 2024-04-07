@@ -5,15 +5,17 @@ import { renderHook } from "@testing-library/react";
 import items from "./products.json";
 
 function App() {
+  const [dataF, setDataF] = useState({});
+  const [viewer, setViewer] = useState(0);
+  const [cart, setCart] = useState([]);
+  const [query, setQuery] = useState('');
+  const [cartTotal, setCartTotal] = useState(0);
+  const [itemList, setItemList] = useState(items);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm("");
-  const [dataF, setDataF] = useState({});
-  const [viewer, setViewer] = useState(0);
-  const [cart, setCart] = useState([]);
-    const [cartTotal, setCartTotal] = useState(0);
   const updatetotwo = (data) => {
     console.log(data); // log all data
     console.log(data.fullName); // log only fullname
@@ -25,9 +27,11 @@ function App() {
     setViewer(dataF.viewer = 1);
     setDataF(dataF);
   };
-  const updateHooks = () => {
+  const UpdateHooks = () => {
     setViewer(dataF.viewer = 0);
-    setDataF(dataF);
+    setDataF(useState({}));
+    setCart(useState([]))
+    setCartTotal(useState(0))
   };
   const addToCart = (list) => {
     setCart([...cart, list]);
@@ -52,6 +56,15 @@ function App() {
     }
     setCartTotal(totalVal);
   };
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+    const results = items.filter(eachItem => {
+        if(e.target.value === "") return itemList;
+        return eachItem.title.toLowerCase().includes(e.target.value.toLowerCase())
+    });
+    console.log(results);
+    setItemList(results);
+  }
   function howManyofThis(id) {
     let hmot = cart.filter((cartItem) => cartItem.id === id);
     return hmot.length;
@@ -64,7 +77,7 @@ function App() {
       } = useForm("");
     
     
-    const listItems = items.map((list) => (
+    const listItems = itemList.map((list) => (
     // PRODUCT
     <div class="row border-top border-bottom" key={list.id}>
       <div class="row main align-items-center">
@@ -96,12 +109,15 @@ function App() {
       </div>
     </div>
   ));
-  
-  
-  
   return (
     <div>
       STORE SE/ComS319
+      <div className = "searchbar">
+        <input className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700
+dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+dark:focus:ring-blue-500 dark:focus:border-blue-500" type="search" value={query} onChange={handleChange} />
+      </div>
       <div class="card">
         <div class="row">
           {/* HERE, IT IS THE SHOPING CART */}
@@ -198,7 +214,7 @@ function App() {
           </div>
           <button onClick = {updatetotwo} type="submit" className=
 "btn btn-primary">Submit</button>
-<button onClick={updateHooks} className="btn btn-secondary">Return</button>
+<button onClick={UpdateHooks} className="btn btn-secondary">Return</button>
         </form>
       </div>
     );
@@ -232,7 +248,7 @@ function App() {
           {dataF.city},{dataF.state} {dataF.zip}{" "}
         </p>
         
-        <button onClick={updateHooks} className=
+        <button onClick={UpdateHooks} className=
 "btn btn-secondary">Return to shop.</button>
       </div>
     );
@@ -245,5 +261,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
